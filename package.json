@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -W",
-    "dev": "nodemon build/index.js"
+"start": "node ."
   },
   "keywords": [],
   "author": "",
