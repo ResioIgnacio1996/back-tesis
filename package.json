@@ -1,10 +1,10 @@
 {
-  "name": "server",
+  "name": "BACK-TESIS",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-"start": "node ."
+"start": "index.js"
   },
   "keywords": [],
   "author": "",
