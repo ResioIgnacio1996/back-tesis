@@ -6,17 +6,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
-//const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
-const clienteRoutes_1 = __importDefault(require("./routes/clienteRoutes"));
-const diasRoutes_1 = __importDefault(require("./routes/diasRoutes"));
-const tipoVehiculoRoutes_1 = __importDefault(require("./routes/tipoVehiculoRoutes"));
-const comentarioRoutes_1 = __importDefault(require("./routes/comentarioRoutes"));
-const empresaRoutes_1 = __importDefault(require("./routes/empresaRoutes"))
+const indexRoutes_1 = __importDefault(require("./build/routes/indexRoutes"));
+const clienteRoutes_1 = __importDefault(require("./build/routes/clienteRoutes"));
+const diasRoutes_1 = __importDefault(require("./build/routes/diasRoutes"));
+const tipoVehiculoRoutes_1 = __importDefault(require("./build/routes/tipoVehiculoRoutes"));
+const comentarioRoutes_1 = __importDefault(require("./build/routes/comentarioRoutes"));
+const empresaRoutes_1 = __importDefault(require("./build/routes/empresaRoutes"))
+
 class Server {
     constructor() {
         this.app = express_1.default();
         this.config();
-        //this.routes(); 
+        this.routes(); 
     }
     config() {
         this.app.set('port', process.env.PORT || 3000);
