@@ -105,7 +105,7 @@ class EmpresaController {
         const idDia = req.params.codigoDia
         return __awaiter(this, void 0, void 0, function* () {
             console.log("+++++++++++++++" + horaDesde + " " + horaHasta + " " + idEmpresa + " " + idDia)
-            yield database_1.default.query("UPDATE   diaxempresa SET idEmpresa=" + [idEmpresa] + ", idDia=" + [idDia] + ", horaDesde='" + [horaDesde] + "', horaHasta='" + [horaHasta] + "' WHERE (idEmpresa= " + [idEmpresa] + " and codigo= " + [idDia] + ")")
+            yield database_1.default.query("UPDATE   diaxempresa SET idEmpresa=" + [idEmpresa] + ", idDia=" + [idDia] + ", horaDesde='" + [horaDesde] + "', horaHasta='" + [horaHasta] + "' WHERE (idEmpresa= " + [idEmpresa] + " and idDia= " + [idDia] + ")")
             console.log(req.body);
             res.json("se guardo la ersona");
         });
