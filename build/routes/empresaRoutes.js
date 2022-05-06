@@ -19,7 +19,7 @@ class EmpresaRuter {
         this.router.post('/saveEmpresaXvehiculo/:empresa/:idVehiculo', empresaCotroller_1.default.saveEmpresaXvehiculo);
         this.router.delete('/deleteEmpresaXvehiculo/:id', empresaCotroller_1.default.deleteEmpresaXvehiculo);
         this.router.post('/saveEmpresaXdia/:idE/:idD/:hd/:hh', empresaCotroller_1.default.saveEmpresaXdia);
-        this.router.put('/updateEmpresaXdia/:idE/:idD/:hd/:hh', empresaCotroller_1.default.updateEmpresaXdia);
+        this.router.put('/updateEmpresaXdia/:idE/:codigoDia/:hd/:hh', empresaCotroller_1.default.updateEmpresaXdia);
         this.router.get('/getDiaXempresa/:idE', empresaCotroller_1.default.getDiaXempresa);
         this.router.put('/updateEmpresa/:pusuario/:usuario/:contrasenia/:cuil/:cel/:nombre', empresaCotroller_1.default.updateEmpresa);
         this.router.put('/updateUbicacion/:latitud/:longitud/:usuario', empresaCotroller_1.default.updateUbicacion);
