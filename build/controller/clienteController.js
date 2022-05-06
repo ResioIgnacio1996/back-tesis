@@ -65,7 +65,7 @@ class ClineteController {
         return __awaiter(this, void 0, void 0, function* () {
             console.log("entra");
             const idTipoVehiculo = req.params.idTipoVehiculo;
-            const empresas = yield database_1.default.query("select e.id,e.nombre,e.celular, e.token, e.longitud, e.latitud, e.usuario,e.id from empresa as e inner join diaxempresa as de on de.idEmpresa = e.id inner join dia as d on d.id = de.idDia inner join tipovehiculoxempresa as ve on ve.idEmpresa=e.id  where  Date_format(now(),'%W')=d.nombre and  DATE_FORMAT(NOW( ), '%H:%i:%S' ) >= de.horaDesde and  DATE_FORMAT(NOW( ), '%H:%i:%S' )<= de.horaHasta and ve.idTipoVehiculo=" + [idTipoVehiculo]);
+            const empresas = yield database_1.default.query("select e.id,e.nombre,e.celular, e.token, e.longitud, e.latitud, e.usuario,e.id from empresa as e inner join diaxempresa as de on de.idEmpresa = e.id inner join dia as d on d.codigo = de.idDia inner join tipovehiculoxempresa as ve on ve.idEmpresa=e.id  where  Date_format(now(),'%W')=d.nombre and  DATE_FORMAT(NOW( ), '%H:%i:%S' ) >= de.horaDesde and  DATE_FORMAT(NOW( ), '%H:%i:%S' )<= de.horaHasta and ve.idTipoVehiculo=" + [idTipoVehiculo]);
             res.json(empresas);
         });
 
