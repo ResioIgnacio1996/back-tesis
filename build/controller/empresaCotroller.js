@@ -102,10 +102,10 @@ class EmpresaController {
         const horaDesde = req.params.hd;
         const horaHasta = req.params.hh;
         const idEmpresa = req.params.idE
-        const idDia = req.params.idD
+        const idDia = req.params.codigoDia
         return __awaiter(this, void 0, void 0, function* () {
             console.log("+++++++++++++++" + horaDesde + " " + horaHasta + " " + idEmpresa + " " + idDia)
-            yield database_1.default.query("UPDATE   diaxempresa SET idEmpresa=" + [idEmpresa] + ", idDia=" + [idDia] + ", horaDesde='" + [horaDesde] + "', horaHasta='" + [horaHasta] + "' WHERE (idEmpresa= " + [idEmpresa] + " and codigo= " + [codigoDia] + ")")
+            yield database_1.default.query("UPDATE   diaxempresa SET idEmpresa=" + [idEmpresa] + ", idDia=" + [idDia] + ", horaDesde='" + [horaDesde] + "', horaHasta='" + [horaHasta] + "' WHERE (idEmpresa= " + [idEmpresa] + " and codigo= " + [idDia] + ")")
             console.log(req.body);
             res.json("se guardo la ersona");
         });
@@ -114,7 +114,7 @@ class EmpresaController {
         const horaDesde = req.params.hd;
         const horaHasta = req.params.hh;
         const idEmpresa = req.params.idE
-        const idDia = req.params.idD
+        const idDia = req.params.codigoDia
         return __awaiter(this, void 0, void 0, function* () {
             console.log("+++++++++++++++" + horaDesde + " " + horaHasta + " " + idEmpresa + " " + idDia)
             yield database_1.default.query("INSERT  INTO diaxempresa(idEmpresa,idDia,horaDesde,horaHasta) VALUES(" + [idEmpresa] + "," + [idDia] + ",'" + [horaDesde] + "','" + [horaHasta] + "')");
