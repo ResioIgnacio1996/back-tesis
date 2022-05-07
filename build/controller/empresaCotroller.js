@@ -129,6 +129,13 @@ class EmpresaController {
             res.json(cliente);
         });
     }
+    getFechaActual(req, res){
+        return __awaiter(this, void 0, void 0, function* () {
+            const emprea = req.params.idE;
+            const cliente = yield database_1.default.query("select curdate()");
+            res.json(cliente);
+        });  
+    }
     updateEmpresa(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const pusuario = req.params.pusuario;
