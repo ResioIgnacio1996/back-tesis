@@ -148,7 +148,7 @@ class ClineteController {
             const cliente = req.params.usuario;//idUsuario
             const idEmpresa = req.params.empresa//idEmpresa
             console.log(cliente + " " + idEmpresa)
-            const empresas = yield database_1.default.query("select v.id from cliente as c inner join viaje as v on v.idCliente= c.id inner join empresa as e on e.id=v.idEmpresa where v.idCliente= " + [cliente] + " and v.idEmpresa=" + [idEmpresa]);
+            const empresas = yield database_1.default.query("select v.id, v.estado from cliente as c inner join viaje as v on v.idCliente= c.id inner join empresa as e on e.id=v.idEmpresa where v.idCliente= " + [cliente] + " and v.idEmpresa=" + [idEmpresa]);
             res.json(empresas);
         });
     }
