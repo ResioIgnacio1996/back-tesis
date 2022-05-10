@@ -54,7 +54,7 @@ class EmpresaController {
         return __awaiter(this, void 0, void 0, function* () {
             console.log("entra by parametro= " + req.params.id);
             const idEmpresa = req.params.id
-            const empresas = yield database_1.default.query("SELECT latitud,longitud,id,usuario,celular,latitud,longitud,nombre,contrasenia,token,cuil FROM empresa WHERE id=?", [idEmpresa]);
+            const empresas = yield database_1.default.query("SELECT latitud,longitud,id,usuario,celular,latitud,longitud,nombre,contrasenia,token,cuil FROM empresa WHERE id=", [idEmpresa]);
             res.json(empresas);
         });
     }
