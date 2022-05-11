@@ -251,7 +251,7 @@ class EmpresaController {
     deleteViajeById(idViaje) {
 
     }
-    listEtadoViaje(req, res) {
+    listEstadoViaje(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             console.log("entra");
             const empresa = req.params.empresa;
