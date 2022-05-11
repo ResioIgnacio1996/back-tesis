@@ -282,7 +282,7 @@ class EmpresaController {
             res.json(empresas);
         });
     }
-    listadoCliente(req, res) {
+    /*listadoCliente(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             console.log("entra");
             const idEmpresa = req.params.idEmpresa;
@@ -290,7 +290,7 @@ class EmpresaController {
             const empresas = yield database_1.default.query("select date_format(fecha ,'%d-%m-%Y') as fecha, v.estado as estado, c.usuario as cliente, ev.descripcion as estadoViaje from viaje as v inner join cliente as c on c.id=v.idCliente inner join estado_viaje as ev on ev.codigo = v.estado where  v.idEmpresa ="+ idEmpresa+" and v.idCliente="+ idCliente);
             res.json(empresas);
         });
-    }
+    }*/
 contEstadosviajes(req, res){
     return __awaiter(this, void 0, void 0, function* () {
         console.log("entra");
