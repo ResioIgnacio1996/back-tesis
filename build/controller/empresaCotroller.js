@@ -320,6 +320,15 @@ setHoraSalidaRealViaje(req, res) {
         yield database_1.default.query("UPDATE viaje SET fecha_hora_salida= now() WHERE id=  "+idViaje);
     });
 } 
+listEtadoViaje(req, res){
+    return __awaiter(this, void 0, void 0, function* () {
+        const idViaje = req.params.idViaje;
+        
+        //console.log("------------------------"+req.params.id+"---------------------")
+        yield database_1.default.query("SELECT * FROM estado_viaje" );
+    });
+}
 } 
+
 const clienteController = new EmpresaController();
 exports.default = clienteController;
