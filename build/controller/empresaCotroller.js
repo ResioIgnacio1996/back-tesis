@@ -50,7 +50,7 @@ class EmpresaController {
             yield database_1.default.query("UPDATE cliente SET nombre= '" + nombre + "' , usuario= '" + usuario + "', contrasenia= '" + contrasenia + "', id_tipo_vehiculo=" + idTipoVehiculo + ", documento='" + documento + "'WHERE usuario=  ", [pusuario]);
         });
     }
-    getEmpresaByid(req, res) {
+    getEmpresaById(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             console.log("entra by parametro= " + req.params.id);
             const idEmpresa = req.params.id
