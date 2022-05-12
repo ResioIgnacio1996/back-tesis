@@ -321,12 +321,14 @@ setHoraSalidaRealViaje(req, res) {
     });
 } 
 listEtadoViaje(req, res){
-    return __awaiter(this, void 0, void 0, function* () {
-        const idViaje = req.params.idViaje;
-        
-        //console.log("------------------------"+req.params.id+"---------------------")
-        yield database_1.default.query("SELECT * FROM estado_viaje" );
-    });
+    return __awaiter(this, void 0, void 0, function* () {        
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log("entra");
+            const idEmpresa = req.params.idEmpresa;
+            const idCliente = req.params.idCliente
+            const empresas = yield database_1.default.query("SELECT * FROM estado_viaje");
+            res.json(empresas);
+        });    });
 }
 } 
 
