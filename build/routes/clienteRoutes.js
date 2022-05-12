@@ -19,7 +19,7 @@ class ClienteRuter {
         this.router.post('/saveCliente', clienteController_2.default.saveCliente);
         this.router.put('/updateCliente/:pusuario/:nombre/:contrasenia/:usuario/:idTipoVehiculo/:documento', clienteController_2.default.updateCliente);
         this.router.post('/saveViaje', clienteController_2.default.saveViaje)
-        this.router.get('/getUltimaNotificacion/:cliente', clienteController_2.default.getUltimaNotificacion)
+        this.router.get('/getUltimaNotificacion/:cliente/:idEmpresa/:idViaje', clienteController_2.default.getUltimaNotificacion)
         this.router.get('/getAllNotificacion/:cliente/:idEmpresa/:idViaje', clienteController_2.default.getAllNotificacion)
         this.router.post('/saveNotificacion', clienteController_2.default.saveNotificacion)
         this.router.put('/updateEstadoViaje/:idViaje/:estado', clienteController_2.default.updateEstadoViaje)
