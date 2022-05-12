@@ -23,7 +23,7 @@ class EmpresaRuter {
         this.router.get('/getDiaXempresa/:idE', empresaCotroller_1.default.getDiaXempresa);
         this.router.put('/updateEmpresa/:pusuario/:usuario/:contrasenia/:cuil/:cel/:nombre', empresaCotroller_1.default.updateEmpresa);
         this.router.put('/updateUbicacion/:latitud/:longitud/:usuario', empresaCotroller_1.default.updateUbicacion);
-        this.router.get('/getEmpresaById/:id', empresaCotroller_1.default.getEmpresaByid);
+        this.router.get('/getEmpresaById/:id', empresaCotroller_1.default.getEmpresaById);
         this.router.get('/getViajes/:idEmpresa', empresaCotroller_1.default.getViajes);
         this.router.put('updateToken/token/:token', empresaCotroller_1.default.updateToken)
         this.router.get('/getAllMotivosCancelacion/:empresa', empresaCotroller_1.default.getAllMotivosCancelacion)
@@ -39,7 +39,7 @@ class EmpresaRuter {
         this.router.get('/contEstadosviajes/:idEmpresa/:idCliente', empresaCotroller_1.default.contEstadosviajes)
         this.router.put('/setHoraSalidaViaje/:idViaje/:horaSalidaAprox/:horaLlegadaAprox', empresaCotroller_1.default.setHoraSalidaViaje);
         this.router.put('/setHoraSalidaRealViaje/:idViaje/', empresaCotroller_1.default.setHoraSalidaRealViaje);
-        //this.router.get('/getFEchaActual', empresaCotroller_1.default.listadoCliente)
+        this.router.get('/getFEchaActual', empresaCotroller_1.default.listadoCliente)
 
         /*  this.router.delete('/:id', perosnaController.deleted)
           this.router.put('/:id', perosnaController.update)*/
