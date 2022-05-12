@@ -32,7 +32,7 @@ class EmpresaRuter {
         this.router.get('/filtroEstadoViajes/:idEmpresa/:fechaDesde/:fechaHasta/:distancia/:codigoEstadoViaje', empresaCotroller_1.default.filtroEstadoViajes)
         this.router.get('/getEstadoViajes/:empresa', empresaCotroller_1.default.getEstadoViajes)
         this.router.delete('/deleteViajeById/:idViaje', empresaCotroller_1.default.deleteViajeById)
-        this.router.get('/listEstadoViaje', empresaCotroller_1.default.listEtadoViaje)
+       // this.router.get('/listEstadoViaje', empresaCotroller_1.default.listEtadoViaje)
         this.router.get('/gteViajeByCodigoEstadoViaje/:idEmpresa/:codigoEstado', empresaCotroller_1.default.gteViajeByCodigoEstadoViaje)
         this.router.get('/getAllMotivoCancelacion', empresaCotroller_1.default.getAllMotivoCancelacion)
         this.router.get('/listadoCliente/:idEmpresa/:idCliente', empresaCotroller_1.default.listadoCliente)
