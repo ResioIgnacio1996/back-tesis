@@ -6,7 +6,7 @@ const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
 const serverHttp = require('http').server(app)
-const io = __importDefault(require('socket.io')(serverHttp))
+const io = __importDefault(require('@type/socket.io')(serverHttp))
 const indexRoutes_1 = __importDefault(require("./build/routes/indexRoutes"));
 const clienteRoutes_1 = __importDefault(require("./build/routes/clienteRoutes"));
 const diasRoutes_1 = __importDefault(require("./build/routes/diasRoutes"));
@@ -42,5 +42,10 @@ class Server {
     }
     
 }
+io.on('connection',(socket)=>{
+    const idHandShake=socket.id
+    const {nameRoom}=socket.handsShake.query
+    console.Console('Hola chupapija '+idHandShake+ " "+nameRoom)
+})
 const server = new Server();
 server.start();
