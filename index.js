@@ -42,10 +42,10 @@ class Server {
     }
     
 }
-io.on('connection',(socket)=>{
+/*io.on('connection',(socket)=>{
     const idHandShake=socket.id
     const {nameRoom}=socket.handsShake.query
     console.Console('Hola chupapija '+idHandShake+ " "+nameRoom)
-})
+})*/
 const server = new Server();
 server.start();
