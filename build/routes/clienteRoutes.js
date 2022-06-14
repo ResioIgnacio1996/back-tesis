@@ -30,7 +30,7 @@ class ClienteRuter {
         this.router.get('/getUltomoViajeByidCliente/:idCliente', clienteController_2.default.getIdUltimoViajeByidCliente)
         this.router.get('/getDetalleViaje/:idViaje', clienteController_2.default.getDetalleViaje)
         this.router.get('/getViajesSolicitados/:idCliente/:idEmpresa', clienteController_2.default.getViajesSolcitados)
-        this.router.put('/setVistoCliente/:idViaje', clienteController_2.default.setVistoClienteNotificacion);
+        this.router.put('/setVistoCliente/:idCliente/:idEmpresa', clienteController_2.default.setVistoClienteNotificacion);
 
     }
 }

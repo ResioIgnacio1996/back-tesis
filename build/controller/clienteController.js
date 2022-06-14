@@ -190,9 +190,11 @@ class ClineteController {
     }
     setVistoClienteNotificacion(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const idViaje = req.params.idViaje
+            const idCliente = req.params.idCliente
+            const idEmpresa = req.params.idEmpresa
+
             const idMotivoCancelacion = req.params.idMotivoCancelacion
-            const empresas = yield database_1.default.query("update notificacion set visto_cliente=0" + idMotivoCancelacion + " where( id=" + idViaje + ")");
+            const empresas = yield database_1.default.query("update notificacion set visto_cliente=0"  + " where( idCliente=" + idCliente + " and idEmpresa= " +idEmpresa +")");
             res.json(empresas);
         });
     }
