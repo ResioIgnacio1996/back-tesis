@@ -9,7 +9,7 @@ class EmpresaRuter {
         this.router = express_1.Router();
         this.config();
     }
-    config() {
+    config() {  
         //  this.router.get('/', (req,res) => res.send('usuario'))
         this.router.get('/loginEmpresa/:usuario/:contrasenia', empresaCotroller_1.default.loginEmpresa);
         this.router.post('/saveEmpresa', empresaCotroller_1.default.saveEmpresa);
