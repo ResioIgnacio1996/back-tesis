@@ -40,7 +40,7 @@ class EmpresaRuter {
         this.router.put('/setHoraSalidaViaje/:idViaje/:horaSalidaAprox/:horaLlegadaAprox', empresaCotroller_1.default.setHoraSalidaViaje);
         this.router.put('/setHoraSalidaRealViaje/:idViaje/', empresaCotroller_1.default.setHoraSalidaRealViaje);
         this.router.get('/getFEchaActual', empresaCotroller_1.default.listadoCliente)
-        this.router.put('/setVistoEmpresa/:idCliente/:idEmpresa', clienteController_2.default.setVistoEmpresa);
+        this.router.put('/setVistoEmpresa/:idCliente/:idEmpresa', empresaCotroller_1.default.setVistoEmpresa);
 
         /*  this.router.delete('/:id', perosnaController.deleted)
           this.router.put('/:id', perosnaController.update)*/
