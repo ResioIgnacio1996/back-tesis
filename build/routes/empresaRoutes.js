@@ -26,7 +26,7 @@ class EmpresaRuter {
         this.router.get('/getEmpresaById/:id', empresaCotroller_1.default.getEmpresaById);
         this.router.get('/getViajes/:idEmpresa', empresaCotroller_1.default.getViajes);
         this.router.put('updateToken/token/:token', empresaCotroller_1.default.updateToken)
-        this.router.get('/getAllMotivosCancelacion/:empresa', empresaCotroller_1.default.getAllMotivosCancelacion)
+        this.router.get('/getAllMotivosCancelacion', empresaCotroller_1.default.getAllMotivosCancelacion)
         this.router.get('/getUltimaNotificacion/:idEmpresa', empresaCotroller_1.default.getUltimaNotificacion)
         this.router.get('/filtroMotivosCancelacion/:idEmpresa/:fechaDesde/:fechaHasta/:distancia/:idMotivoCancelacion', empresaCotroller_1.default.filtroMotivosCancelacion)
         this.router.get('/filtroEstadoViajes/:idEmpresa/:fechaDesde/:fechaHasta/:distancia/:codigoEstadoViaje', empresaCotroller_1.default.filtroEstadoViajes)
