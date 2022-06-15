@@ -335,7 +335,7 @@ setVistoEmpresa(req, res) {
         const idEmpresa = req.params.idEmpresa
 
         const idMotivoCancelacion = req.params.idMotivoCancelacion
-        const empresas = yield database_1.default.query("update notificacion set visto_cliente=0"  + " where( idCliente=" + idCliente + " and idEmpresa= " +idEmpresa +")");
+        const empresas = yield database_1.default.query("update notificacion set visto_empresa=0"  + " where( idCliente=" + idCliente + " and idEmpresa= " +idEmpresa +")");
         res.json(empresas);
     });
 }
