@@ -54,7 +54,7 @@ class EmpresaController {
         return __awaiter(this, void 0, void 0, function* () {
             console.log("entra by parametro= " + req.params.id);
             const idEmpresa = req.params.id
-            const empresas = yield database_1.default.query("SELECT latitud,longitud,id,usuario,celular,nombre,contrasenia,token,cuil FROM empresa WHERE id="+ idEmpresa);
+            const empresas = yield database_1.default.query("SELECT latitud,longitud,id,usuario,celular,nombre,contrasenia,token,cuil FROM empresa WHERE id=" + idEmpresa);
             res.json(empresas);
         });
     }
@@ -129,11 +129,11 @@ class EmpresaController {
             res.json(cliente);
         });
     }
-    getFechaActual(req, res){
+    getFechaActual(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const cliente = yield database_1.default.query("select curdate()");
             res.json(cliente);
-        });  
+        });
     }
     updateEmpresa(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -163,12 +163,12 @@ class EmpresaController {
     }
     getViajes(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const idEmpresa = req.params.idEmpresa; 
-            const empresas = yield database_1.default.query(" select  c.id as idCliente, c.usuario, c.token, v.id, v.origen, v.latitud, v.longitud,v.destino,v.estado,v.distancia, v.id as idViaje,ev.descripcion from viaje as v inner join estado_viaje as ev on ev.codigo=v.estado inner join cliente as c on c.id= v.idCliente where (v.idEmpresa= "+ [idEmpresa] + " and  v.fecha =date_add(NOW(), INTERVAL +1 DAY) or v.fecha=curdate()) order by v.fecha_modificacion desc"); 
+            const idEmpresa = req.params.idEmpresa;
+            const empresas = yield database_1.default.query(" select  c.id as idCliente, c.usuario, c.token, v.id, v.origen, v.latitud, v.longitud,v.destino,v.estado,v.distancia, v.id as idViaje,ev.descripcion from viaje as v inner join estado_viaje as ev on ev.codigo=v.estado inner join cliente as c on c.id= v.idCliente where (v.idEmpresa= " + [idEmpresa] + " and  v.fecha =date_add(NOW(), INTERVAL +1 DAY) or v.fecha=curdate()) order by v.fecha_modificacion desc");
             res.json(empresas);
         });
     }
-    updateToken(req, res) { 
+    updateToken(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const idEmpresa = req.params.idEmpresa;
             const token = req.params.token;
@@ -286,67 +286,75 @@ class EmpresaController {
             console.log("entra");
             const idEmpresa = req.params.idEmpresa;
             const idCliente = req.params.idCliente
-            const empresas = yield database_1.default.query("select date_format(fecha ,'%d-%m-%Y') as fecha, v.estado as estado, c.usuario as cliente, ev.descripcion as estadoViaje from viaje as v inner join cliente as c on c.id=v.idCliente inner join estado_viaje as ev on ev.codigo = v.estado where  v.idEmpresa ="+ idEmpresa+" and v.idCliente="+ idCliente);
+            const empresas = yield database_1.default.query("select date_format(fecha ,'%d-%m-%Y') as fecha, v.estado as estado, c.usuario as cliente, ev.descripcion as estadoViaje from viaje as v inner join cliente as c on c.id=v.idCliente inner join estado_viaje as ev on ev.codigo = v.estado where  v.idEmpresa =" + idEmpresa + " and v.idCliente=" + idCliente);
             res.json(empresas);
         });
     }
-contEstadosviajes(req, res){
-    return __awaiter(this, void 0, void 0, function* () {
-        console.log("entra");
-        const idEmpresa = req.params.idEmpresa;
-        const idCliente = req.params.idCliente
-        const empresas = yield database_1.default.query("select   count(estado) as cantidad, v.estado as estado from viaje as v inner join cliente as c on c.id=v.idCliente inner join estado_viaje as ev on ev.codigo = v.estado where  v.idEmpresa ="+ idEmpresa+" and v.idCliente="+ idCliente + "  group by v.estado");
-        res.json(empresas);
-    });
-}
-setHoraSalidaViaje(req, res) {
-    return __awaiter(this, void 0, void 0, function* () {
-        const idViaje = req.params.idViaje;
-        const horaSalidaAprox=req.params.horaSalidaAprox;
-        const horaLlegadaAprox=req.params.horaLlegadaAprox;
-        console.log(horaSalidaAprox +"------------------**********************" +horaLlegadaAprox +" *--------------------")
-        
-        //console.log("------------------------"+req.params.id+"---------------------")
-        yield database_1.default.query("UPDATE viaje SET fecha_hora_salida_aprox= '"+horaSalidaAprox+"', fecha_hora_llegada= '"+horaLlegadaAprox+"' WHERE id=  "+idViaje);
-    });
-} 
-
-setHoraSalidaRealViaje(req, res) {
-    return __awaiter(this, void 0, void 0, function* () {
-        const idViaje = req.params.idViaje;
-        
-        //console.log("------------------------"+req.params.id+"---------------------")
-        yield database_1.default.query("UPDATE viaje SET fecha_hora_salida= now() WHERE id=  "+idViaje);
-    });
-} 
-listEtadoViaje(req, res){
-    return __awaiter(this, void 0, void 0, function* () {        
+    contEstadosviajes(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             console.log("entra");
             const idEmpresa = req.params.idEmpresa;
             const idCliente = req.params.idCliente
-            const empresas = yield database_1.default.query("SELECT * FROM estado_viaje");
+            const empresas = yield database_1.default.query("select   count(estado) as cantidad, v.estado as estado from viaje as v inner join cliente as c on c.id=v.idCliente inner join estado_viaje as ev on ev.codigo = v.estado where  v.idEmpresa =" + idEmpresa + " and v.idCliente=" + idCliente + "  group by v.estado");
             res.json(empresas);
-        });    });
-}
-setVistoEmpresa(req, res) {
-    return __awaiter(this, void 0, void 0, function* () {
-        const idCliente = req.params.idCliente
-        const idEmpresa = req.params.idEmpresa
+        });
+    }
+    setHoraSalidaViaje(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const idViaje = req.params.idViaje;
+            const horaSalidaAprox = req.params.horaSalidaAprox;
+            const horaLlegadaAprox = req.params.horaLlegadaAprox;
+            console.log(horaSalidaAprox + "------------------**********************" + horaLlegadaAprox + " *--------------------")
 
-        const idMotivoCancelacion = req.params.idMotivoCancelacion
-        const empresas = yield database_1.default.query("update notificacion set visto_empresa=0"  + " where( idCliente=" + idCliente + " and idEmpresa= " +idEmpresa +")");
-        res.json(empresas);
-    });
+            //console.log("------------------------"+req.params.id+"---------------------")
+            yield database_1.default.query("UPDATE viaje SET fecha_hora_salida_aprox= '" + horaSalidaAprox + "', fecha_hora_llegada= '" + horaLlegadaAprox + "' WHERE id=  " + idViaje);
+        });
+    }
+
+    setHoraSalidaRealViaje(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const idViaje = req.params.idViaje;
+
+            //console.log("------------------------"+req.params.id+"---------------------")
+            yield database_1.default.query("UPDATE viaje SET fecha_hora_salida= now() WHERE id=  " + idViaje);
+        });
+    }
+    listEtadoViaje(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return __awaiter(this, void 0, void 0, function* () {
+                console.log("entra");
+                const idEmpresa = req.params.idEmpresa;
+                const idCliente = req.params.idCliente
+                const empresas = yield database_1.default.query("SELECT * FROM estado_viaje");
+                res.json(empresas);
+            });
+        });
+    }
+    setVistoEmpresa(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const idCliente = req.params.idCliente
+            const idEmpresa = req.params.idEmpresa
+
+            const idMotivoCancelacion = req.params.idMotivoCancelacion
+            const empresas = yield database_1.default.query("update notificacion set visto_empresa=0" + " where( idCliente=" + idCliente + " and idEmpresa= " + idEmpresa + ")");
+            res.json(empresas);
+        });
+    }
+    getUltimaNotificacion(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const idEmpresa = req.params.idEmpresa;
+            const empresas = yield database_1.default.query("SELECT max(n.id),n.descripcion, c.usuario, e.nombre, c.usuario, e.id, c.id as idCliente, n.idViaje from cliente as c  inner join notificacion as n on n.idCliente=c.id  inner join empresa as e on e.id= n.idEmpresa inner join viaje as v on v.id=n.idViaje where  n.idEmpresa=" + idEmpresa + " group by c.id,e.id");
+            res.json(empresas);
+        });
+    }
+    getViajesNoLeidos() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const idEmpresa = req.params.idEmpresa;
+            const empresas = yield database_1.default.query(" select   select count(id) from notificacion where idEmpresa="+idEmpresa+" and  codigo<7 and visto_empresa=0 ");
+            res.json(empresas);
+        });
+    }
 }
-getUltimaNotificacion(req, res) {
-    return __awaiter(this, void 0, void 0, function* () {
-        const idEmpresa = req.params.idEmpresa;        
-        const empresas = yield database_1.default.query("SELECT max(n.id),n.descripcion, c.usuario, e.nombre, c.usuario, e.id, c.id as idCliente, n.idViaje from cliente as c  inner join notificacion as n on n.idCliente=c.id  inner join empresa as e on e.id= n.idEmpresa inner join viaje as v on v.id=n.idViaje where  n.idEmpresa=" + idEmpresa + " group by c.id,e.id");
-        res.json(empresas);
-    });
-}
-} 
 
 const empresaController = new EmpresaController();
 exports.default = empresaController;
