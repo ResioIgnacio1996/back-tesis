@@ -358,3 +358,4 @@ class EmpresaController {
 
 const empresaController = new EmpresaController();
 exports.default = empresaController;
+ 
