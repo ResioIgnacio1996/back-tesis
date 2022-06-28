@@ -42,7 +42,7 @@ class EmpresaRuter {
         this.router.get('/getFEchaActual', empresaCotroller_1.default.listadoCliente)
         this.router.put('/setVistoEmpresa/:idCliente/:idEmpresa', empresaCotroller_1.default.setVistoEmpresa);
         this.router.get('/getViajesNoLeidos/:idEmpresa', empresaCotroller_1.default.getViajesNoLeidos)
-
+ 
         
         /*  this.router.delete('/:id', perosnaController.deleted)
           this.router.put('/:id', perosnaController.update)*/
