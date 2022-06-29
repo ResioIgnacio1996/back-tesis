@@ -348,7 +348,14 @@ class EmpresaController {
     getViajesNoLeidos(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const idEmpresa = req.params.idEmpresa;
-            const empresas = yield database_1.default.query(" select   count(id) from notificacion where idEmpresa=" + idEmpresa + " and  codigo<7 and visto_empresa=0 ");
+            const empresas = yield database_1.default.query(" select   count(id) as cantidad from notificacion where idEmpresa=" + idEmpresa + " and  codigo<7 and visto_empresa=0 ");
+            res.json(empresas);
+        });
+    }
+    getNotificacionesNoLeidas(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const idEmpresa = req.params.idEmpresa;
+            const empresas = yield database_1.default.query(" select   count(id) as cantidad from notificacion where idEmpresa=" + idEmpresa + " and  codigo=7 and visto_empresa=0 ");
             res.json(empresas);
         });
     }
