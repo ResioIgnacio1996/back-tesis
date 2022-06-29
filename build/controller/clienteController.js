@@ -198,6 +198,14 @@ class ClineteController {
             res.json(empresas);
         });
     }
+    getNotificacionesNoLeidas(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const idCliente = req.params.idCliente;
+            const cliente = yield database_1.default.query(" select   count(id) as cantidad from notificacion where idEmpresa=" + idCliente + "  and visto_cliente=0 ");
+            res.json(cliente);
+        });
+
+    }
 
 }
 const clienteController = new ClineteController();
