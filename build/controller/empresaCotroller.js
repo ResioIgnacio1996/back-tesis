@@ -360,7 +360,13 @@ class EmpresaController {
         });
 
     }
-    updateCliente(req, res) {
+    setVistoNotificacion(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const idEmpresa = req.params.idEmpresa;
+            yield database_1.default.query("UPDATE notificacion SET visto_empresa=1  WHERE usuario=  where idEmpresa=" + idEmpresa + " and  codigo=7 and visto_empresa=0 ");
+        });
+    }
+    setVistoViaje(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const idEmpresa = req.params.idEmpresa;
             yield database_1.default.query("UPDATE notificacion SET visto_empresa=1  WHERE usuario=  where idEmpresa=" + idEmpresa + " and  codigo=7 and visto_empresa=0 ");
