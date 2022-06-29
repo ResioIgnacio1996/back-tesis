@@ -43,8 +43,8 @@ class EmpresaRuter {
         this.router.put('/setVistoEmpresa/:idCliente/:idEmpresa', empresaCotroller_1.default.setVistoEmpresa);
         this.router.get('/getViajesNoLeidos/:idEmpresa', empresaCotroller_1.default.getViajesNoLeidos)
         this.router.get('/getNotificacionesNoLeidas/:idEmpresa', empresaCotroller_1.default.getNotificacionesNoLeidas)
-        this.router.put('/setVistoViaje/:idEmpresa', empresaCotroller_1.default.updateCliente)
-        this.router.put('/setVistoNotificacion/:idEmpresa', empresaCotroller_1.default.updateCliente)
+        this.router.put('/setVistoViaje/:idEmpresa', empresaCotroller_1.default.setVistoViaje)
+        this.router.put('/setVistoNotificacion/:idEmpresa', empresaCotroller_1.default.setVistoNotificacion)
 
         
         /*  this.router.delete('/:id', perosnaController.deleted)
