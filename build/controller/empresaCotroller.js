@@ -358,6 +358,13 @@ class EmpresaController {
             const empresas = yield database_1.default.query(" select   count(id) as cantidad from notificacion where idEmpresa=" + idEmpresa + " and  codigo=7 and visto_empresa=0 ");
             res.json(empresas);
         });
+
+    }
+    updateCliente(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const idEmpresa = req.params.idEmpresa;
+            yield database_1.default.query("UPDATE notificacion SET visto_empresa=1  WHERE usuario=  where idEmpresa=" + idEmpresa + " and  codigo=7 and visto_empresa=0 ");
+        });
     }
 }
 
