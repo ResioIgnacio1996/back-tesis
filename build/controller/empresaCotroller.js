@@ -369,7 +369,7 @@ class EmpresaController {
     setVistoViaje(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const idEmpresa = req.params.idEmpresa;
-            yield database_1.default.query("UPDATE notificacion SET visto_empresa=1    WHERE idEmpresa=" + idEmpresa + " and  codigo=7 and visto_empresa=0 ");
+            yield database_1.default.query("UPDATE notificacion SET visto_empresa=1    WHERE idEmpresa=" + idEmpresa + " and  codigo=7");
         });
     }
 }
