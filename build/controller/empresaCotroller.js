@@ -166,7 +166,7 @@ class EmpresaController {
             const idEmpresa = req.params.idEmpresa;
             const empresas = yield database_1.default.query(" select v.idEmpresa,  c.id as idCliente, c.usuario, c.token, v.id, v.origen, v.latitud, v.longitud,v.destino,v.estado,v.distancia, v.id as idViaje,ev.descripcion from viaje as v inner join estado_viaje as ev on ev.codigo=v.estado inner join cliente as c on c.id= v.idCliente where (v.idEmpresa= " + [idEmpresa] + " and  v.fecha =date_add(NOW(), INTERVAL +1 DAY) or v.fecha=curdate()) order by v.fecha_modificacion desc");
             res.json(empresas);
-        });
+        }); 
     }
     updateToken(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
