@@ -372,7 +372,7 @@ class EmpresaController {
             yield database_1.default.query("UPDATE notificacion SET visto_empresa=1    WHERE idEmpresa=" + idEmpresa + " and  codigo<>7");
         });
     }
-    getFechaHoraActual(){
+    getFechaHoraActual(req, res){
         return __awaiter(this, void 0, void 0, function* () {
             const idEmpresa = req.params.idEmpresa;
             const empresas = yield database_1.default.query(" select  NOW() as fecha_hora");
