@@ -45,6 +45,7 @@ class EmpresaRuter {
         this.router.get('/getNotificacionesNoLeidas/:idEmpresa', empresaCotroller_1.default.getNotificacionesNoLeidas)
         this.router.put('/setVistoViaje/:idEmpresa', empresaCotroller_1.default.setVistoViaje)
         this.router.put('/setVistoNotificacion/:idEmpresa', empresaCotroller_1.default.setVistoNotificacion)
+        this.router.get('/getFechaHoraActual', empresaCotroller_1.default.getFechaHoraActual)
 
         
         /*  this.router.delete('/:id', perosnaController.deleted)
