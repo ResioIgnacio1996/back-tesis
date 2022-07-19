@@ -341,7 +341,7 @@ class EmpresaController {
     getUltimaNotificacion(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const idEmpresa = req.params.idEmpresa;
-            const empresas = yield database_1.default.query("SELECT max(n.id),n.descripcion, c.usuario, e.nombre, c.usuario, e.id, c.id as idCliente, n.idViaje from cliente as c  inner join notificacion as n on n.idCliente=c.id  inner join empresa as e on e.id= n.idEmpresa inner join viaje as v on v.id=n.idViaje where  n.idEmpresa=" + idEmpresa + " desc group by c.id,e.id  order by fecha_hora " );
+            const empresas = yield database_1.default.query("SELECT max(n.id),n.descripcion, c.usuario, e.nombre, c.usuario, e.id, c.id as idCliente, n.idViaje from cliente as c  inner join notificacion as n on n.idCliente=c.id  inner join empresa as e on e.id= n.idEmpresa inner join viaje as v on v.id=n.idViaje where  n.idEmpresa=" + idEmpresa + " desc group by c.id,e.id  order by v.id " );
             res.json(empresas);
         });
     }
