@@ -93,7 +93,7 @@ class ClineteController {
             const cliente = req.params.cliente;
             console.log(cliente)
             
-            const empresas = yield database_1.default.query("SELECT max(n.id),n.descripcion, c.usuario, e.nombre, c.usuario, e.id, c.id as idCliente, n.idViaje from cliente as c  inner join notificacion as n on n.idCliente=c.id  inner join empresa as e on e.id= n.idEmpresa inner join viaje as v on v.id=n.idViaje where  n.idCliente=" + cliente + " group by c.id,e.id");
+            const empresas = yield database_1.default.query("SELECT max(n.id),n.descripcion, c.usuario, e.nombre, c.usuario, e.id, c.id as idCliente, n.idViaje from cliente as c  inner join notificacion as n on n.idCliente=c.id  inner join empresa as e on e.id= n.idEmpresa inner join viaje as v on v.id=n.idViaje where  n.idCliente=" + cliente + " order by fecha_hora desc group by c.id,e.id");
             res.json(empresas);
         });
     }
