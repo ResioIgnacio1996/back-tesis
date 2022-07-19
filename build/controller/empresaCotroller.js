@@ -375,7 +375,7 @@ class EmpresaController {
     getFechaHoraActual(req, res){
         return __awaiter(this, void 0, void 0, function* () {
             const idEmpresa = req.params.idEmpresa;
-            const empresas = yield database_1.default.query(" select  NOW() as fecha_hora");
+            const empresas = yield database_1.default.query(" SELECT DATE_SUB(NOW(), INTERVAL 3 HOUR) fecha_hora");
             res.json(empresas);
         });
     }
