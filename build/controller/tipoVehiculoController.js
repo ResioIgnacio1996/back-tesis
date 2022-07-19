@@ -22,7 +22,7 @@ class TipoVehiculoController {
     } 
     getDate(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const TipoVehiculoController = yield database_1.default.query("SELECT CURDATE()");
+            const TipoVehiculoController = yield database_1.default.query("SELECT CURDATE() as fecha");
             res.json(TipoVehiculoController);
         }); 
     } 
