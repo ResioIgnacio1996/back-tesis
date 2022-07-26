@@ -17,7 +17,7 @@ class ComentarioController {
     getComentario(req, res) {
         const idEmpresa = req.params.idEmpresa;
         return __awaiter(this, void 0, void 0, function* () {
-            const comentario = yield database_1.default.query( "select c.descripcion, cl.usuario, fechaHora from cliente as cl inner join comentario as c on c.idCliente=cl.usuario inner join empresa as e on c.idEmpresa= e.id where c.idEmpresa= "+[idEmpresa]);
+            const comentario = yield database_1.default.query( "select c.descripcion, cl.usuario, fechaHora from cliente as cl inner join comentario as c on c.idCliente=cl.id inner join empresa as e on c.idEmpresa= e.id where c.idEmpresa= "+[idEmpresa]);
             res.json(comentario);
         });
     }
