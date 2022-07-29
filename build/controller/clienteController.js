@@ -83,7 +83,7 @@ class ClineteController {
             const distancia = req.body.distancia;
             const distanciaTotal =req.body.distanciaTotal;
             const latitudDestino =req.body.latitudDestino;
-            const longitudDestino =req.body.longitudDestido;
+            const longitudDestino =req.body.longitudDestino;
 
 
             yield database_1.default.query("INSERT INTO viaje (origen, destino,  longitud, latitud, estado, idCliente, idEmpresa,  fecha, distancia, idMotivoCancelacion,fecha_modificacion,fecha_hora_solicitado, distanciaTotal,longitudDestino,latitudDestino) values('" + origen + "', '" + destino + "'," + longitud + "," + latitud + "," + estado + "," + idCliente + "," + idEmpresa + ", curdate() ," + distancia + "," + 0 + ",now(),now(),'"+distanciaTotal+"',"+longitudDestino +", "+latitudDestino+" )")
