@@ -29,12 +29,8 @@ io.on('connection',(socket)=>{
         socket.broadcast.emit("resiveMensagge",object); 
     })
 })
-app.get('/',(req,res)=>{
-    res.send('<h1>hola mundo</>')
-});
-http.listen(3000,()=>{
-    console.log("hola ando ")
-})
+
+
 class Server {
     constructor() {
         this.app = express_1.default();
