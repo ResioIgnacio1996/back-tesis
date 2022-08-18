@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
-const http = require('http').Server(app);
+const http = require('http').Server(express_1);
 //const serverHttp = __importDefault( require('http').server(app))
 //const io = __importDefault(require('@type/socket.io')(serverHttp))
 const indexRoutes_1 = __importDefault(require("./build/routes/indexRoutes"));
