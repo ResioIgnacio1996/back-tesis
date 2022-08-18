@@ -14,7 +14,7 @@ const diasRoutes_1 = __importDefault(require("./build/routes/diasRoutes"));
 const tipoVehiculoRoutes_1 = __importDefault(require("./build/routes/tipoVehiculoRoutes"));
 const comentarioRoutes_1 = __importDefault(require("./build/routes/comentarioRoutes"));
 const empresaRoutes_1 = __importDefault(require("./build/routes/empresaRoutes"))
-const io = require('socket.io')(http,{
+const io = require('@socket.io')(http,{
     cors:{
         origin:true,
         credentials:true,
