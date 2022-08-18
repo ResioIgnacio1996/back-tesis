@@ -5,7 +5,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
-const http = require('http').Server(express_1);
 //const serverHttp = __importDefault( require('http').server(app))
 //const io = __importDefault(require('@type/socket.io')(serverHttp))
 const indexRoutes_1 = __importDefault(require("./build/routes/indexRoutes"));
@@ -14,21 +13,6 @@ const diasRoutes_1 = __importDefault(require("./build/routes/diasRoutes"));
 const tipoVehiculoRoutes_1 = __importDefault(require("./build/routes/tipoVehiculoRoutes"));
 const comentarioRoutes_1 = __importDefault(require("./build/routes/comentarioRoutes"));
 const empresaRoutes_1 = __importDefault(require("./build/routes/empresaRoutes"))
-const io = require('@types/socket.io')(http,{
-    cors:{
-        origin:true,
-        credentials:true,
-        methods:['GET','POST']
-    }
-});
-io.on('connection',(socket)=>{
-    console.log("anda chat")
-    socket.on("sendMesagge",(object)=>{
-        console.log("test= "+object.text)
-
-        socket.broadcast.emit("resiveMensagge",object); 
-    })
-})
 
 
 class Server {
