@@ -13,7 +13,7 @@ const diasRoutes_1 = __importDefault(require("./build/routes/diasRoutes"));
 const tipoVehiculoRoutes_1 = __importDefault(require("./build/routes/tipoVehiculoRoutes"));
 const comentarioRoutes_1 = __importDefault(require("./build/routes/comentarioRoutes"));
 const empresaRoutes_1 = __importDefault(require("./build/routes/empresaRoutes"))
-const chatRoutes = __importDefault(require("./chats/index"))
+//const chatRoutes = __importDefault(require("./chats/index"))
 
 class Server {
     constructor() {
@@ -35,7 +35,7 @@ class Server {
         this.app.use('/api/tipoVehiculo', tipoVehiculoRoutes_1.default);
         this.app.use('/api/comentario', comentarioRoutes_1.default);
         this.app.use('/api/empresa', empresaRoutes_1.default)
-        this.app.use('/api/chats',chatRoutes.default)
+      //  this.app.use('/api/chats',chatRoutes.default)
     }
     start() {
         this.app.listen(this.app.get('port'));
