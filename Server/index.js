@@ -12,7 +12,7 @@ const diasRoutes_1 = __importDefault(require("./build/routes/diasRoutes"));
 const tipoVehiculoRoutes_1 = __importDefault(require("./build/routes/tipoVehiculoRoutes"));
 const comentarioRoutes_1 = __importDefault(require("./build/routes/comentarioRoutes"));
 const empresaRoutes_1 = __importDefault(require("./build/routes/empresaRoutes"))
-const chatRoutes = __importDefault(require("./chats/index"))
+
 const { Socket } = require('dgram');
 const app = require('express')();
 const http = require('http').Server(app);
