@@ -23,14 +23,6 @@ const io = require('socket.io')(http, {
         methods: ['GET', 'POST']
     }
 });
-io.on('connection', (socket) => {
-    console.log("     --------------------------------------------------------------------------------------anda chat")
-    socket.on("sendMesagge", (object) => {
-        console.log("test= " + object.text)
-
-        socket.broadcast.emit("resiveMensagge", object);
-    })
-})
 
 class Server {
     constructor() {
@@ -45,6 +37,7 @@ class Server {
         this.app.use(express_1.default.json());
         this.app.use(express_1.default.urlencoded({ extended: false }));
     }
+    
     routes() {
         this.app.use(indexRoutes_1.default);
         this.app.use('/api/cliente', clienteRoutes_1.default);
@@ -60,10 +53,14 @@ class Server {
     }
 
 }
-/*io.on('connection',(socket)=>{
-    const idHandShake=socket.id
-    const {nameRoom}=socket.handsShake.query
-    console.Console('Hola chupapija '+idHandShake+ " "+nameRoom)
-})*/
+io.on('connection', (socket) => {
+    console.log("     --------------------------------------------------------------------------------------anda chat")
+    socket.on("sendMesagge", (object) => {
+        console.log("test= " + object.text)
+
+        socket.broadcast.emit("resiveMensagge", object);
+    })
+})
+
 const server = new Server();
 server.start();
