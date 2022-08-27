@@ -24,7 +24,7 @@ const io = require('socket.io')(http, {
     }
 });
 io.on('connection', (socket) => {
-    console.log("anda chat")
+    console.log("     --------------------------------------------------------------------------------------anda chat")
     socket.on("sendMesagge", (object) => {
         console.log("test= " + object.text)
 
